@@ -57,12 +57,15 @@ gunzip $database_dir/GRC38_no_alt_analysis_set.fna.gz
 # create composite reference of human and virus for competitive bwt mapping 
 # based host removal
 cat $database_dir/GRC38_no_alt_analysis_set.fna $database_dir/$accession.fasta > $database_dir/composite_human_viral_reference.fna
+echo "Checkpoint 1"
 bwa index $database_dir/composite_human_viral_reference.fna
+
+echo "Checkpoint 2"
 
 # get kraken2 viral db
 mkdir -pv $database_dir/Kraken2/db
 curl -v -o $database_dir/Kraken2/db/k2_viral_20210517.tar.gz "https://genome-idx.s3.amazonaws.com/kraken/k2_viral_20210517.tar.gz"
-cd $database_dir/Kraken2/db
+cd -v $database_dir/Kraken2/db
 tar xvf k2_viral_20210517.tar.gz
 
 # create blank fasta for 'phylo_include_seqs'
