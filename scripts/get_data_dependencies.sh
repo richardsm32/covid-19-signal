@@ -60,8 +60,8 @@ cat $database_dir/GRC38_no_alt_analysis_set.fna $database_dir/$accession.fasta >
 bwa index $database_dir/composite_human_viral_reference.fna
 
 # get kraken2 viral db
-mkdir -p $database_dir/Kraken2/db
-curl -s "https://genome-idx.s3.amazonaws.com/kraken/k2_viral_20210517.tar.gz" > $database_dir/Kraken2/db/k2_viral_20210517.tar.gz
+mkdir -pv $database_dir/Kraken2/db
+curl -v -o $database_dir/Kraken2/db/k2_viral_20210517.tar.gz "https://genome-idx.s3.amazonaws.com/kraken/k2_viral_20210517.tar.gz"
 cd $database_dir/Kraken2/db
 tar xvf k2_viral_20210517.tar.gz
 
