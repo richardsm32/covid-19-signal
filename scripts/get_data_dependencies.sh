@@ -51,7 +51,7 @@ conda activate data_dependencies
 
 # get the GRCh38 human genome
 # as per https://lh3.github.io/2017/11/13/which-human-reference-genome-to-use
-curl -s -o $database_dir/GRC38_no_alt_analysis_set.fna.gz "https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/001/405/GCA_000001405.15_GRCh38/seqs_for_alignment_pipelines.ucsc_ids/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.gz"
+curl -v -o $database_dir/GRC38_no_alt_analysis_set.fna.gz "https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/001/405/GCA_000001405.15_GRCh38/seqs_for_alignment_pipelines.ucsc_ids/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.gz"
 gunzip $database_dir/GRC38_no_alt_analysis_set.fna.gz
 
 # create composite reference of human and virus for competitive bwt mapping 
