@@ -68,5 +68,7 @@ curl -v -o $database_dir/Kraken2/db/k2_viral_20210517.tar.gz "https://genome-idx
 cd $database_dir/Kraken2/db
 tar -xvf k2_viral_20210517.tar.gz
 
+echo "Checkpoint 3"
+
 # create blank fasta for 'phylo_include_seqs'
 touch $database_dir/blank.fasta
